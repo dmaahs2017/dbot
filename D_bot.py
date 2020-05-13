@@ -13,9 +13,7 @@ async def on_ready():
 @client.event
 async def on_message(message):
     print(f"{message.channel}: {message.author}: {message.author.name}: {message.content}")
-
-    if parser.isCommand(message):
-        await message.channel.send(parser.parse(message))
-
+    if 'hi there' in message.content.lower():
+        await message.channel.send("HI!")
 
 client.run(token)
