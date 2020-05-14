@@ -1,6 +1,7 @@
 import discord
 import parser
-from random import randint
+import os
+import random
 
 CLIENTID = 710029944646008883
 PERMISSIONINT = 67584
@@ -20,8 +21,11 @@ def quote(person):
     for q in filter(lambda l: "====================" != l, quotes.splitlines()):
         qs.append(q.replace('[', '').replace(']', '').replace("'", ''))
 
-    return "> " + qs[randint(0, len(qs) - 1)] + '\n- ai-' + person
-    
+    return "> " + qs[random.randint(0, len(qs) - 1)] + '\n- ai-' + person
+
+def instagram(acct):
+    return f"instagram/{acct}/" + random.choice(os.listdir(f"instagram/{acct}/"))
+
 @client.event
 async def on_ready():
     print(f'We have loggin in as {client.user}')
@@ -35,6 +39,12 @@ async def on_message(message):
             await message.channel.send(quote(botargs[1]))
         else:
             await message.channel.send(quote("joe"))
+    elif 'dbot.ig' == botargs[0]:
+        await message.channel.send(file=discord.File(instagram(botargs[1])))
+    elif 'dbot.ooo' == botargs[0]:
+        await message.channel.send(":tophat:\n:eyes:\n:nose:\n:lips:")
+    elif 'dbot.contribute' == botargs[0]:
+        await message.channel.send("Consider Contributing to dbot at: https://github.com/dmaahs2017/discord-bots. Message @Dabrick2017#9824 for help :smiley:")
         
 
 client.run(token)
