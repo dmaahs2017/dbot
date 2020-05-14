@@ -45,6 +45,13 @@ async def on_message(message):
         await message.channel.send(":tophat:\n:eyes:\n:nose:\n:lips:")
     elif 'dbot.contribute' == botargs[0]:
         await message.channel.send("Consider Contributing to dbot at: https://github.com/dmaahs2017/discord-bots. Message @Dabrick2017#9824 for help :smiley:")
+    elif 'dbot.help' == botargs[0] or 'dbot.h' == botargs[0]:
+        await message.channel.send(
+            "Commands:\n" +
+            "\t`dbot.quote [person]` - generate a random quote from [person]\n" +
+            "\t`dbot.ig {acct}` - generate a random ig post from ig@acct\n" +
+            "\t`dbot.contribute` - see how you can contribute to this bot!\n" +
+            "\t`dbot.h` or `dbot.help` - see this help list")
         
 
 client.run(token)
