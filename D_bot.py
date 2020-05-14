@@ -40,7 +40,7 @@ async def on_message(message):
         else:
             await message.channel.send(quote("joe"))
     elif 'dbot.ig' == botargs[0]:
-        await message.channel.send(file=discord.File(instagram(botargs[1])))
+        await message.channel.send(f"Credit: ig@{botargs[1]}", file=discord.File(instagram(botargs[1])))
     elif 'dbot.ooo' == botargs[0]:
         await message.channel.send(":tophat:\n:eyes:\n:nose:\n:lips:")
     elif 'dbot.contribute' == botargs[0]:
