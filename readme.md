@@ -3,7 +3,7 @@
 * Clone this repository
 * Be sure to have python3 (the latest version) install on your system.
 * Be sure to have pip3 installed on your system.
-* install dependencies with `./install_dependencies.sh`
+* install dependencies with `./install_dependencies.sh` (not yet in the repo)
 * * You can also install each pip3 module manually, look through `install_dependencies.sh` to see what is required
 * * You may want to create a virtualenv environment, if you wish to keep dependecies local to the project.
 * To then contribute, email `maahs2017@gmail.com` or message `@Dabrick2017#9824` on discord for contribution access to the repository.
