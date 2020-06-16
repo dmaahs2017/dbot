@@ -2,7 +2,7 @@ import discord
 import os
 from discord.ext import commands
 import random
-
+import os
 
 class Actions(commands.Cog):
 
@@ -11,6 +11,13 @@ class Actions(commands.Cog):
         self._last_member = None
 
     # COMMANDS
+    @commands.command(help="Description: Prints a line of text in ascii art")
+    async def figlet(self, ctx, *args):
+        text = ""
+        for arg in args:
+            text += sep + arg;
+        figletText = os.popen(f"figlet {text}").read()
+        await ctx.send(f"```{figletText}```")
 
     @commands.command(help="Description: Gets random ig post from an ig account")
     async def ig(self, ctx, acct):
