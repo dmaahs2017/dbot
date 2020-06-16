@@ -15,7 +15,7 @@ class Actions(commands.Cog):
     async def figlet(self, ctx, *args):
         text = ""
         for arg in args:
-            text += sep + arg;
+            text += " " + arg;
         figletText = os.popen(f"figlet {text}").read()
         await ctx.send(f"```{figletText}```")
 
