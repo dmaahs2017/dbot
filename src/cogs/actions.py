@@ -14,7 +14,6 @@ class Actions(commands.Cog):
     @commands.command(help="Description: Prints a line of text in ascii art")
     async def figlet(self, ctx, *args):
         text = ""
-        sep = " "
         for arg in args:
             text += sep + arg;
         figletText = os.popen(f"figlet {text}").read()
